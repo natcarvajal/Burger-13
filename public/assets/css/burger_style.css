@@ -1,10 +1,24 @@
+body {
+  background-color: #e9c46a;
+  text-align: center;
+}
+h1 {
+  margin-left: 3rem;
+  color: #2a9d8f;
+  text-align: center;
+  font-family: "Press Start 2P", cursive;
+}
+h2 {
+  font-family: "Quicksand", sans-serif;
+}
 li {
   padding: 5px;
   margin: 5px;
-  background: #e63946;
+  background: #e76f51;
+  display: inline-block;
 }
 
-.label {
+/* .label {
   font-weight: bold;
 }
 
@@ -12,8 +26,24 @@ li {
   padding: 5px;
   margin: 5px;
   background: aqua;
-}
+  font-family: "Quicksand", sans-serif;
+} */
 
 .form-group {
   margin-bottom: 5px;
+  font-family: "Quicksand", sans-serif;
 }
+.fas {
+  color: #264653;
+}
+button {
+  background-color: white;
+  color: black;
+  border: 2px solid #264653;
+  font-family: "Quicksand", sans-serif;
+  border-radius: 4px;
+}
+/* img {
+  background: transparent;
+  text-align: center;
+} */
