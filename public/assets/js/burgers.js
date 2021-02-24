@@ -5,18 +5,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
   }
 
   // UPDATE
-  const changeSleepBtns = document.querySelectorAll(".change-sleep");
+  const changeDevourBtns = document.querySelectorAll(".change-devour");
 
   // Set up the event listener for the create button
-  if (changeSleepBtns) {
-    changeSleepBtns.forEach((button) => {
+  if (changeDevourBtns) {
+    changeDevourBtns.forEach((button) => {
       button.addEventListener("click", (e) => {
         // Grabs the id of the element that goes by the name, "id"
         const id = e.target.getAttribute("data-id");
-        const newSleep = e.target.getAttribute("data-newsleep");
+        const newDevour = e.target.getAttribute("data-newdevour");
 
-        const newSleepState = {
-          sleepy: newSleep,
+        const newDevourState = {
+          devour: newDevour,
         };
 
         fetch(`/api/burgers/${id}`, {
@@ -27,12 +27,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
           },
 
           // make sure to serialize the JSON body
-          body: JSON.stringify(newSleepState),
+          body: JSON.stringify(newDevourState),
         }).then((response) => {
           // Check that the response is all good
           // Reload the page so the user can see the new quote
           if (response.ok) {
-            console.log(`changed sleep to: ${newSleep}`);
+            console.log(`changed devour to: ${newDevour}`);
             location.reload("/");
           } else {
             alert("something went wrong!");
@@ -51,8 +51,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
       // Grabs the value of the textarea that goes by the name, "quote"
       const newBurger = {
-        name: document.getElementById("bur").value.trim(),
-        sleepy: document.getElementById("sleepy").checked,
+        burger_type: document.getElementById("bur").value.trim(),
+        devour: document.getElementById("devour").checked,
       };
 
       // Send POST request to create a new quote

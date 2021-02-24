@@ -1,36 +1,40 @@
-const express = require('express');
+const express = require("express");
 
 const router = express.Router();
 
 // Import the model (burger.js) to use its database functions.
-const burger = require('../models/burger.js');
+const burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
   burger.all((data) => {
     const hbsObject = {
       burgers: data,
     };
     console.log(hbsObject);
-    res.render('index', hbsObject);
+    res.render("index", hbsObject);
   });
 });
 
-router.post('/api/burgers', (req, res) => {
-  burger.create(['name', 'sleepy'], [req.body.name, req.body.sleepy], (result) => {
-    // Send back the ID of the new quote
-    res.json({ id: result.insertId });
-  });
+router.post("/api/burgers", (req, res) => {
+  burger.create(
+    ["burger_type", "devour"],
+    [req.body.burger_type, req.body.devour],
+    (result) => {
+      // Send back the ID of the new quote
+      res.json({ id: result.insertId });
+    }
+  );
 });
 
-router.put('/api/burgers/:id', (req, res) => {
+router.put("/api/burgers/:id", (req, res) => {
   const condition = `id = ${req.params.id}`;
 
-  console.log('condition', condition);
+  console.log("condition", condition);
 
   burger.update(
     {
-      sleepy: req.body.sleepy,
+      devour: req.body.devour,
     },
     condition,
     (result) => {
@@ -43,7 +47,7 @@ router.put('/api/burgers/:id', (req, res) => {
   );
 });
 
-router.delete('/api/burgers/:id', (req, res) => {
+router.delete("/api/burgers/:id", (req, res) => {
   const condition = `id = ${req.params.id}`;
 
   burger.delete(condition, (result) => {
