@@ -18,8 +18,8 @@ router.get("/", (req, res) => {
 
 router.post("/api/burgers", (req, res) => {
   burger.create(
-    ["burger_type", "devour"],
-    [req.body.burger_type, req.body.devour],
+    ["burger_types", "devour"],
+    [req.body.burger_types, req.body.devour],
     (result) => {
       // Send back the ID of the new quote
       res.json({ id: result.insertId });
