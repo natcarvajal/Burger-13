@@ -12,7 +12,7 @@ In this assignment, I created a burger logger with MySQL, Node, Express, Handleb
 * npm install dotenv
 
 ## Screenshot:
-![landing page](./image/screen-shot.png)
+![landing page](/public/assets/img/main.png)
 
  ## Links:
 * [Github Repo](https://github.com/natcarvajal/Burger-13)
@@ -21,12 +21,4 @@ In this assignment, I created a burger logger with MySQL, Node, Express, Handleb
 ## Questions
 
 If you have any questions, please reach out to me via email: nataliacarvajal1996@gmail.com.
-
-What the project does
-Why the project is useful
-How users can get started with the project
-Where users can get help with your project
-Who maintains and contributes to the project
-
-
 
